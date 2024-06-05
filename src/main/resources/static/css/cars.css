@@ -1,0 +1,56 @@
+/* Heading */
+h2 {
+    color: #213547;
+    font-weight: bold;
+}
+
+/* Search Form */
+#searchForm {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchForm input {
+    
+    border: 1px solid #ced4da;
+    border-radius: 8px 0 0 8px;
+}
+
+#searchForm button {
+    
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Price Range Filter */
+.price-range-filter {
+    display: flex;
+    align-items: center;
+}
+
+.price-range-filter p {
+    margin-right: 10px;
+}
+
+.price-range-filter input {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.price-range-filter button {
+    padding: 10px 20px;
+}
+
+/* Sell Car Button */
+.sell-car-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.sell-car-button a {
+    padding: 10px 20px;
+}
