@@ -8,16 +8,16 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Switch to a slimmer runtime image
-FROM tomcat:9.0.48-jdk11-openjdk-slim
+FROM openjdk:11.0.14-jdk-slim
 
-# Remove the default Tomcat webapps
-RUN rm -rf /usr/local/tomcat/webapps/*
+# Set the working directory in the image
+WORKDIR /app
 
-# Copy the built JAR from the build stage to the Tomcat webapps directory
-COPY --from=build /target/used-cars-sales-portal-0.0.1-SNAPSHOT.jar /usr/local/tomcat/webapps/used-cars-sales-portal.jar
+# Copy the built JAR from the build stage to the image
+COPY --from=build /target/used-cars-sales-portal-0.0.1-SNAPSHOT.jar /app/used-cars-sales-portal.jar
 
-# Expose port for the application
+# Expose port 8080 for the Spring Boot application
 EXPOSE 8080
 
-# Start Tomcat
-CMD ["catalina.sh", "run"]
+# Start the Spring Boot application
+CMD ["java", "-jar", "used-cars-sales-portal.jar"]
