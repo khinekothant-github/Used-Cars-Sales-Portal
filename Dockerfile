@@ -8,7 +8,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Switch to a slimmer runtime image
-FROM tomcat:9.0.57-jdk11-adoptopenjdk-openj9
+FROM tomcat:9.0.48-jdk11-openjdk-slim
 
 # Remove the default Tomcat webapps
 RUN rm -rf /usr/local/tomcat/webapps/*
