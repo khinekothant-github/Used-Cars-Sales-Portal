@@ -1,30 +1,23 @@
-# Use an official Maven image to build the project
-FROM maven:3.8.6-openjdk-11-slim AS build
+# Use a specific Maven version with JDK 11
+FROM maven:3.8.5-openjdk-11 AS build
 
-# Set the working directory
-WORKDIR /app
+# Copy application code to the build stage
+COPY . .
 
-# Copy the pom.xml and download dependencies
-COPY pom.xml .
-RUN mvn dependency:go-offline -B
-
-# Copy the project files and build the project
-COPY src ./src
-
+# Build the application, skipping tests
 RUN mvn clean package -DskipTests
 
+# Switch to a slimmer runtime image
+FROM tomcat:9.0.57-jdk11-openjdk-slim
 
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+# Remove the default Tomcat webapps
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Set the working directory
-WORKDIR /app
+# Copy the built JAR from the build stage to the Tomcat webapps directory
+COPY --from=build /target/used-cars-sales-portal-0.0.1-SNAPSHOT.jar /usr/local/tomcat/webapps/used-cars-sales-portal.jar
 
-# Copy the built jar file from the build stage
-COPY --from=build /app/target/used-cars-sales-portal-0.0.1-SNAPSHOT.jar /app/used-cars-sales-portal.jar
-
-# Expose the port the application runs on
+# Expose port for the application
 EXPOSE 8080
 
-# Run the jar file
-ENTRYPOINT ["java", "-jar", "/app/used-cars-sales-portal.jar"]
+# Start Tomcat
+CMD ["catalina.sh", "run"]
