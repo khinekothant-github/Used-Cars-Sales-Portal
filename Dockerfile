@@ -10,15 +10,10 @@ RUN mvn dependency:go-offline -B
 
 # Copy the project files and build the project
 COPY src ./src
-RUN mvn package -DskipTests
 
-<<<<<<< HEAD
-=======
-# Build the application
 RUN mvn clean package -DskipTests
 
 
->>>>>>> 3adfc4f81398a843dc888cdf075f50d0ce64905d
 # Use an official OpenJDK runtime as a parent image
 FROM openjdk:11-jre-slim
 
