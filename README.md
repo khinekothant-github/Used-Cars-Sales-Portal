@@ -68,34 +68,4 @@ spring.datasource.password=<YOUR_DB_PASSWORD>
 4. **Run Java Application and open [http://localhost:8080](http://localhost:8080)**
 
 ## Screenshot
-
-<p>Home Page</p>
-<img src="./images/home.png" alt="home_page" width="50%"/>
-<p>Login</p>
-<img src="./images/login.png" alt="login" width="50%"/>
-<p>Profile page</p>
-<img src="./images/profile.png" alt="profile" width="50%"/>
-<p>Cars Page</p>
-<img src="./images/cars.png" alt="cars" width="50%"/>
-<p>Car Detail Page</p>
-<img src="./images/car-detail.png" alt="car_detail" width="50%"/>
-<p>Post Car</p>
-<img src="./images/post-car.png" alt="post_car" width="50%"/>
-<p>Bid Car</p>
-<img src="./images/place-bid.png" alt="bid_car" width="50%"/>
-<p>Test Drive</p>
-<img src="./images/test-drive.png" alt="test_drive" width="50%"/>
-<p>Appointment</p>
-<img src="./images/appointment.png" alt="appointment" width="50%"/>
-<p>My Posted Car</p>
-<img src="./images/my-posted-car.png" alt="my_posted_car" width="50%"/>
-<p>About Page</p>
-<img src="./images/about.png" alt="about" width="50%"/>
-<p>Contact Page</p>
-<img src="./images/contact.png" alt="contact" width="50%"/>
-<p>Admin Pages</p>
-<img src="./images/admin.png" alt="admin" width="50%"/>
-<img src="./images/admin2.png" alt="admin" width="50%"/>
-"# Used-Cars-Sales-Portal" 
-"# Used-Cars-Sales-Portal" 
-"# Used-Cars-Sales-Portal" 
+![Uploading image.png…]()
