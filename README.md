@@ -68,4 +68,5 @@ spring.datasource.password=<YOUR_DB_PASSWORD>
 4. **Run Java Application and open [http://localhost:8080](http://localhost:8080)**
 
 ## Screenshot
-![Uploading image.png…]()
+![image](https://github.com/khinekothant-github/Used-Cars-Sales-Portal/assets/142343237/e9d77621-12b6-4790-8fc6-a471d24d98c7)
+
